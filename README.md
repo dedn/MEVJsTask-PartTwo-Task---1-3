@@ -4,7 +4,7 @@
 The script adds a button to open an office in a new tab
 
 ## Task 3 (completed)
-
+Link GitPage http://dedn.github.io/task3/
 ### Description of the task
 2.Create web-page that contains list of products: Every product has some name, description, photo (use any default photo for all items), price and ‘Buy’ button. When pressing buy button show modal window with text “You have bought a {product_name}”
 
