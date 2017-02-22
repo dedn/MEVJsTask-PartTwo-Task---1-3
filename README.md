@@ -1,7 +1,8 @@
 # MEVJsTask-PartTwo-Task---1-3
 
-## Task 1 (In progress)
-The script adds a button to open an office in a new tab
+## Task 1 (completed)
+### Description of the task
+Write a script that could be run on https://www.reddit.com/r/Owls/ . Script should add after each image preview two button. First button is for opening this article in new browser tab, other for downloading this image preview. Also script should modify look of the list, items should have dark or light background. Text on items with dark background should have light colors, and vice versa.
 
 ## Task 3 (completed)
 Link GitPage http://dedn.github.io/task3/
