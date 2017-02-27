@@ -30,4 +30,3 @@ function addValue(request, response) {
 
   response.send(reply);
 }
-
