@@ -18,56 +18,56 @@ canvas.addEventListener("mouseup", stop, false);
 canvas.addEventListener("mouseout", stop, false);
 
 function start(event) {
-    Drawing = true;
-    context.beginPath();
-    context.moveTo(getX(event), getY(event));
-    event.preventDefault();
+  Drawing = true;
+  context.beginPath();
+  context.moveTo(getX(event), getY(event));
+  event.preventDefault();
 }
 
 function draw(event) {
-    if (Drawing) {
-        canvas.style.cursor = ' pointer';
-        context.lineTo(getX(event), getY(event));
-        context.strokeStyle = strokeColor;
-        context.lineWidth = strokeWidth;
-        context.lineCap = "round";
-        context.lineJoin = "round";
-        context.stroke();
-    }
-    event.preventDefault();
+  if (Drawing) {
+    canvas.style.cursor = ' pointer';
+    context.lineTo(getX(event), getY(event));
+    context.strokeStyle = strokeColor;
+    context.lineWidth = strokeWidth;
+    context.lineCap = "round";
+    context.lineJoin = "round";
+    context.stroke();
+  }
+  event.preventDefault();
 }
 
 function stop(event) {
-    if (Drawing) {
-        canvas.style.cursor = 'default';
-        context.stroke();
-        context.closePath();
-        Drawing = false;
-    }
-    event.preventDefault();
+  if (Drawing) {
+    canvas.style.cursor = 'default';
+    context.stroke();
+    context.closePath();
+    Drawing = false;
+  }
+  event.preventDefault();
 }
 
 function getY(event) {
-    if (event.pageY == undefined) {
-        return event.targetTouches[0].pageY - canvas.offsetTop
-    }
-    else {
-        return event.pageY - canvas.offsetTop
-    }
+  if (event.pageY == undefined) {
+    return event.targetTouches[0].pageY - canvas.offsetTop
+  }
+  else {
+    return event.pageY - canvas.offsetTop
+  }
 }
 
 function getX(event) {
-    if (event.pageX == undefined) {
-        return event.targetTouches[0].pageX - canvas.offsetLeft
-    }
-    else {
-        return event.pageX - canvas.offsetLeft
-    }
+  if (event.pageX == undefined) {
+    return event.targetTouches[0].pageX - canvas.offsetLeft
+  }
+  else {
+    return event.pageX - canvas.offsetLeft
+  }
 }
 
 function Reset() {
-    context.fillStyle = "#fffff";
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    context.fillRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = "#fffff";
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.fillRect(0, 0, canvas.width, canvas.height);
 
 }
