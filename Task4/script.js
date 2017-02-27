@@ -30,6 +30,8 @@ function draw(event) {
         context.lineTo(getX(event), getY(event));
         context.strokeStyle = strokeColor;
         context.lineWidth = strokeWidth;
+        context.lineCap = "round";
+        context.lineJoin = "round";
         context.stroke();
     }
     event.preventDefault();
