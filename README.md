@@ -12,7 +12,7 @@ Link GitPage http://dedn.github.io/task3/
 3.Extend second task with ability to get products using XMLHttpRequest. For this purposes store them in JSON file. Add simple nodejs backed server to serve this file. Also add ‘Bought {number} times’ to product item. When someone bought product, update product data.
 
 ###For start:
-Install the server. Open a terminal in the folder with the project. Enter the command(npm install node-static).server will be installed.  Run:(node server.js) Open the browser localhost:8080
+Install the server. Open a terminal in the folder with the project. Enter the command(npm install node-static).server will be installed.  Run:(node server.js) Open the browser localhost:3001
 
 ## Task 4 (completed)
 Link GitPage http://dedn.github.io/Task4/
