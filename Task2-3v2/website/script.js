@@ -1,6 +1,13 @@
+
 (function () {
 
   var buttons = document.querySelector('#list');
+
+  var event = {
+    name: "",
+    description: "",
+    value: 0
+  };
 
   buttons.onclick = function (e) {
     var target = e.target;
@@ -9,6 +16,8 @@
     alert(' You have bought a ' + product);
     var count = target.closest('li').querySelector('.product-item__counter');
     count.innerText = parseInt(count.innerText) + 1;
+    var str = JSON.stringify(event);
+    fs.writeFileSync('/data/product.json', str);
   };
 
   var container = document.querySelector(".products-list");

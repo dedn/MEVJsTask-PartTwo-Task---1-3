@@ -10,9 +10,28 @@
 <body>
 <div class="container">
     <canvas id="canvas"></canvas>
-    <input type="color" oninput="strokeColor = this.value" placeholder=" Other colours">
-    <input type="range" min="1" max="100" oninput="strokeWidth = this.value">
+    <div class="control">
+        <input id="selectColors" type="color" placeholder=" Other colours">
+        <span>SET COLOR</span>
+    </div>
     <button onclick="Reset()">Reset</button>
+    <div class="control">
+        <span>RADIUS</span>
+        <input type="range" name="radiusPoint" id="radiusPoint" min="1" max="30" step="1" value="10">
+        <span id="radTextRaduis">10</span>
+    </div>
+    <div class="control">
+        <span>BLUR</span>
+        <input type="range" name="radiusBlur" id="radiusBlur" min="0" max="30" step="1" value="0">
+        <span id="radTextBlur">0</span>
+    </div>
+
+    <div class="control">
+        <span>OPACITY</span>
+        <input type="range" name="valueOpacity" id="valueOpacity" min="0" max="1" step="0.1" value="0">
+        <span id="radTextOpacity">0</span>
+    </div>
+
 </div>
 <script src="script.js"></script>
 </body>

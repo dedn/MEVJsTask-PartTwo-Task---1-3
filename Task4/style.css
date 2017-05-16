@@ -31,3 +31,8 @@ input[type="color"] {
   border: none;
   cursor: pointer;
 }
+
+.control{
+ margin: 10px 0;
+  }
+

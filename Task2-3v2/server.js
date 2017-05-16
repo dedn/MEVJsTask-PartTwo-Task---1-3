@@ -2,7 +2,9 @@ var fs = require('fs');
 var data = fs.readFileSync('website/data/product.json');
 var product = JSON.parse(data);
 console.log(product);
-
+var obj = {
+  table: []
+};
 
 console.log('start');
 var express = require('express');

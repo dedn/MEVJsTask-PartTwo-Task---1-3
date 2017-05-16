@@ -3,15 +3,27 @@ canvas.width = 1000;
 canvas.height = 500;
 var context = canvas.getContext("2d");
 context.fillStyle = "#ffffff";
+context.shadowColor = '#111111';
 context.fillRect(0, 0, canvas.width, canvas.height);
+context.globalAlpha = 1;
+
 var strokeColor = 'black';
-var strokeWidth = "1";
+var strokeWidth = 10;
+var radiusBlur = document.getElementById('radiusBlur');
+var radTextBlur = document.getElementById('radTextBlur');
+
+var radiusPoint = document.getElementById('radiusPoint');
+var radTextRaduis = document.getElementById('radTextRaduis');
+
+var selectColors = document.getElementById('selectColors');
+
+var valueOpacity = document.getElementById('valueOpacity');
+var radTextOpacity = document.getElementById('radTextOpacity');
 
 var Drawing;
+var blur = 0;
 
-canvas.addEventListener("touchstart", start, false);
-canvas.addEventListener("touchmove", draw, false);
-canvas.addEventListener("touchend", stop, false);
+
 canvas.addEventListener("mousedown", start, false);
 canvas.addEventListener("mousemove", draw, false);
 canvas.addEventListener("mouseup", stop, false);
@@ -25,6 +37,12 @@ function start(event) {
 }
 
 function draw(event) {
+
+  valueOpacity.addEventListener('input', function () {
+    radTextOpacity.innerHTML = valueOpacity.value;
+    setOpacity(this.value);
+  });
+
   if (Drawing) {
     canvas.style.cursor = ' pointer';
     context.lineTo(getX(event), getY(event));
@@ -33,6 +51,7 @@ function draw(event) {
     context.lineCap = "round";
     context.lineJoin = "round";
     context.stroke();
+    console.log(context.globalAlpha);
   }
   event.preventDefault();
 }
@@ -70,3 +89,40 @@ function Reset() {
   context.clearRect(0, 0, canvas.width, canvas.height);
   context.fillRect(0, 0, canvas.width, canvas.height);
 }
+
+var setRadiusPoint = function (newRadius) {
+  strokeWidth = newRadius;
+};
+
+var setRadiusBlur = function (newBlur) {
+  blur = newBlur;
+  context.shadowBlur = blur;
+  context.shadowColor = strokeColor;
+};
+
+var setColors = function (newColor) {
+  strokeColor = newColor;
+  context.shadowColor = newColor;
+};
+
+setOpacity = function (newOpacity) {
+ context.globalAlpha = newOpacity / 10 ;
+  console.log(newOpacity);
+};
+
+selectColors.addEventListener('input', function () {
+  setColors(this.value);
+});
+
+radiusPoint.addEventListener('input', function () {
+  radTextRaduis.innerHTML = radiusPoint.value;
+  setRadiusPoint(this.value);
+});
+
+radiusBlur.addEventListener('input', function () {
+  radTextBlur.innerHTML = radiusBlur.value;
+  setRadiusBlur(this.value);
+});
+
+
+
