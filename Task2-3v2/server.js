@@ -16,11 +16,10 @@ function listening() {
 }
 app.use(express.static('website'));
 
-
-app.get('/', addValue);
+// in progress
+app.get('/website', addValue);
 
 function addValue(request, response) {
-  var values = target.closest('li').querySelector('.product-item__counter').textContent;
   var data = request.params;
   var value = Number(data.value);
   var reply;
